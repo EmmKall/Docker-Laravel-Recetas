@@ -14,11 +14,12 @@ use App\Http\Controllers\RecetaController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('welcome'); });
 
 Route::get('/recetas', 'RecetaController@index')->name('recetas.index');
+
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+/* Route::get('/home', 'HomeController@index')->name('home'); */
