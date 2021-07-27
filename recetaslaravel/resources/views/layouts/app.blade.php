@@ -16,6 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
@@ -73,8 +76,15 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        <main class="row py-4 my-3">
+
+            <div class="container col-10 my-2 mx-auto p-2">
+                @yield('botones')
+            </div>
+
+            <div class="col-12">
+                @yield('content')
+            </div>
         </main>
     </div>
     @yield('plugins')
