@@ -13,9 +13,20 @@ class CreateRecetasTable extends Migration
      */
     public function up()
     {
+        Schema::create('categoria_recetas', function(Blueprint $table){
+            $table->id();
+            $table->string('nombre');
+            $table->timestamps();
+        });
+
         Schema::create('recetas', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo')->nullable();
+            $table->string('titulo');
+            $table->text('ingredientes');
+            $table->text('preparacion');
+            $table->string('imagen');
+            $table->foreignId('user_id')->reference('id')->on('users')->comment('Llave foranea de usuario');
+            $table->foreignId('categoria_id')->reference('id')->on('categoria_recetas')->comment('Llave foranea de categoria');
             $table->timestamps();
         });
     }
@@ -28,5 +39,6 @@ class CreateRecetasTable extends Migration
     public function down()
     {
         Schema::dropIfExists('recetas');
+        Schema::dropIfExists('categoria_recetas');
     }
 }

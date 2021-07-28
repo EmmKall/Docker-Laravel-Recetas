@@ -21,15 +21,19 @@
                 </tr>
             </thead>
             <tbody class="text-center">
-                <tr >
-                    <td scope="col">Pizza</td>
-                    <td scope="col">imagen.jpg</td>
-                    <td scope="col">Italiana</td>
+
+                @foreach($recetas as $receta)
+                <tr class="border-bottom">
+                    <td scope="col">{{ $receta->titulo }}</td>
+                    <td scope="col"><img style="width: 200px;" src="../storage/{{ $receta->imagen }}" alt=""></td>
+                    <td scope="col" class="form-img">{{ $receta->categoria_id }}</td>
                     <td scope="col d-flex justify-content-center">
-                        <a href="#" class="btn btn-info text-white">Editar <i class="far fa-edit"></i></a>
-                        <a href="#" class="btn btn-danger">Eliminar <i class="far fa-trash-alt"></i></a>
+                        <a href="{{ $receta->id }}" class="btn btn-info text-white">Editar <i class="far fa-edit"></i></a>
+                        <a href="{{ $receta->id }}" class="btn btn-danger">Eliminar <i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
+                @endforeach
+
             </tbody>
             <tfoot class="bg-primary text-center text-light">
                 <tr>

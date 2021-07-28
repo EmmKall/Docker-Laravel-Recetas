@@ -19,9 +19,11 @@
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
+    @yield('styles')
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('styles')
+
 </head>
 <body>
     <div id="app">
@@ -78,7 +80,7 @@
 
         <main class="row py-4 my-3">
 
-            <div class="container col-10 my-2 mx-auto p-2">
+            <div class="container col-10 my-2 mx-auto">
                 @yield('botones')
             </div>
 

@@ -11075,3 +11075,7 @@ trix-editor {
   color: #FFF;
 }
 
+.form-img img {
+  width: 5rem;
+}
+
