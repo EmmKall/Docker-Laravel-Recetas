@@ -30,8 +30,8 @@
                 <label for="categoria_id" class="col-form-label text-white">{{ __('Categoria Receta') }}</label>
                 <select type="text" id="categoria_id" name="categoria_id" placeholder="Ingrese un titulo" class="form-control @error('categoria_id') is-invalid @enderror">
                     <option value="">-- Seleccione una opción --</option>
-                    @foreach($categorias as $categoria => $id)
-                        <option value="{{ $id }}" {{ old('categoria_id') == $id ? 'selected' : '' }}>{{ $categoria }}</option>
+                    @foreach($categorias as $categoria)
+                        <option value="{{ $categoria->id }}" {{ old('categoria_id') == $categoria->id ? 'selected' : '' }}>{{ $categoria->nombre }}</option>
                     @endforeach
                 </select>
                 @error('categoria_id')
