@@ -84,5 +84,5 @@
 @endsection
 
 @section('plugins')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.js" defer></script>
 @endsection
