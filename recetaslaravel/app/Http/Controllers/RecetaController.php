@@ -93,7 +93,7 @@ class RecetaController extends Controller
      */
     public function show(Receta $receta)
     {
-        return 'Recetas.show';
+        return view('recetas.show')->with('receta', $receta);
     }
 
     /**
@@ -104,7 +104,8 @@ class RecetaController extends Controller
      */
     public function edit(Receta $receta)
     {
-        return 'Recetas.edit';
+        return 'Desde editar' . $receta;
+        return view('recetas.edit');
     }
 
     /**

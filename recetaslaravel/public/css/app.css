@@ -11079,3 +11079,17 @@ trix-editor {
   width: 5rem;
 }
 
+.ingredientes,
+.preparacion {
+  text-align: center;
+}
+
+.ingredientes p,
+.preparacion p {
+  text-align: justify;
+}
+
+.receta-meta p {
+  font-size: 1rem;
+}
+

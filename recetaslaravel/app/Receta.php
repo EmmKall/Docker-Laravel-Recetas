@@ -13,4 +13,8 @@ class Receta extends Model
         return $this->belongsTo(CategoriaRecetas::class);
     }
 
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }

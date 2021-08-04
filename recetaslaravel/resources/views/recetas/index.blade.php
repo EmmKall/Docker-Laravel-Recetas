@@ -28,7 +28,7 @@
                     <td scope="col"><img style="width: 200px;" src="../storage/{{ $receta->imagen }}" alt=""></td>
                     <td scope="col" class="form-img">{{ $receta->categoria->nombre }}</td>
                     <td scope="col d-flex justify-content-center">
-                        <a href="{{ $receta->id }}" class="btn btn-secondary"><i class="fas fa-eye"></i> Ver</a>
+                        <a href="{{ route('recetas.show', ['receta' => $receta->id] ) }}" class="btn btn-secondary"><i class="fas fa-eye"></i> Ver</a>
                         <a href="{{ $receta->id }}" class="btn btn-info text-white">Editar <i class="far fa-edit"></i></a>
                         <a href="{{ $receta->id }}" class="btn btn-danger">Eliminar <i class="far fa-trash-alt"></i></a>
                     </td>
