@@ -13,7 +13,9 @@
         </div>
 
         <div class="">
-            <img class="my-2" src="../storage/{{ $receta->imagen }}" alt="">
+            <div class="d-flex justify-content-center">
+                <img style="width: 80%;" class="my-2" src="../storage/{{ $receta->imagen }}" alt="">
+            </div>
 
             <div class="row my-2">
                 <div class="col-12 col-md-5">
