@@ -23,14 +23,14 @@
             <tbody class="text-center">
 
                 @foreach($recetas as $receta)
-                <tr class="border-bottom">
+                <tr class="border-bottom fw-bold">
                     <td scope="col">{{ $receta->titulo }}</td>
                     <td scope="col"><img style="width: 200px;" src="../storage/{{ $receta->imagen }}" alt=""></td>
                     <td scope="col" class="form-img">{{ $receta->categoria->nombre }}</td>
-                    <td scope="col d-flex justify-content-center">
-                        <a href="{{ route('recetas.show', ['receta' => $receta->id] ) }}" class="btn btn-secondary"><i class="fas fa-eye"></i> Ver</a>
-                        <a href="{{ route('recetas.edit', ['receta' => $receta->id]) }}" class="btn btn-info text-white">Editar <i class="far fa-edit"></i></a>
-                        <a href="{{ $receta->id }}" class="btn btn-danger">Eliminar <i class="far fa-trash-alt"></i></a>
+                    <td scope="col d-flex justify-content-center align-items-center">
+                        <a href="{{ route('recetas.show', ['receta' => $receta->id] ) }}" class="btn btn-secondary d-block"><i class="fas fa-eye"></i> Ver</a>
+                        <a href="{{ route('recetas.edit', ['receta' => $receta->id]) }}" class="btn btn-info text-white my-3 d-block">Editar <i class="far fa-edit"></i></a>
+                        <eliminar-receta id="{{ $receta->id }}"></eliminar-receta>
                     </td>
                 </tr>
                 @endforeach

@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import VueSweetAlert2 from 'vue-sweetalert2';
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -20,8 +22,13 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 /* Vue.component('example-component', require('./components/ExampleComponent.vue').default); */
+Vue.use(VueSweetAlert2);
 Vue.config.ignoredElements = ['trix-editor'];
 Vue.component('fecha-receta', require('./components/FechaMoment.vue').default);
+Vue.component('eliminar-receta', require('./components/EliminarReceta.vue').default);
+
+//Probar SweetAlert2 correctamente incluido e instalado
+/* console.log(Vue.prototype); */
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
