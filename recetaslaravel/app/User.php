@@ -57,7 +57,7 @@ class User extends Authenticatable
 
     //Users to Perfil 1:1
     public function perfil(){
-        return $this->hasOne(Perfil::class);
+        return $this->hasOne(Perfil::class, 'id');
     }
 
 
