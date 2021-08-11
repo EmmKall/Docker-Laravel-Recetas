@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Perfil;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class PerfilController extends Controller
 {
@@ -57,7 +58,7 @@ class PerfilController extends Controller
      */
     public function edit(Perfil $perfil)
     {
-        //
+        return view('perfiles.edit')->with('perfil', $perfil);
     }
 
     /**
@@ -69,7 +70,37 @@ class PerfilController extends Controller
      */
     public function update(Request $request, Perfil $perfil)
     {
-        //
+        $data = request()->validate([
+            'name' => 'required',
+            'url' => 'required',
+            'biografia' => 'required',
+        ]);
+
+        //Actualizar user
+        auth()->user()->url = $data['url'];
+        auth()->user()->name = $data['name'];
+        auth()->user()->save();
+
+        //Eliminar campos de user
+        unset($data['name']);
+        unset($data['url']);
+
+        if($request['imagen']){
+            $ruta_img = $request['imagen']->store('upload-perfiles', 'public');
+
+            $img = Image::make( public_path("storage/{$ruta_img}"))->fit(600, 600);
+            $img->save();
+
+            $array_img = ['imagen' =>$ruta_img];
+        }
+
+        //Axtualizar perfil
+        auth()->user()->perfil()->update(
+            array_merge($data, $array_img ?? [])
+        );
+
+
+        return redirect()->action('RecetaController@index');
     }
 
     /**

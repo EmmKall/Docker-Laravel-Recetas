@@ -3,6 +3,8 @@
 
 @section('botones')
     <a href="{{ route('recetas.create') }}" class="btn btn-primary">Crear Receta  <i class="far fa-plus-square"></i></a>
+    <a href="{{ route('perfiles.show', ['perfil' => auth()->user()->id ]) }}" class="btn btn-outline-info mx-3"><i class="far fa-user"></i>Ver Perfil</a>
+    <a href="{{ route('perfiles.edit', ['perfil' => auth()->user()->id ]) }}" class="btn btn-outline-secondary"><i class="far fa-edit"></i> Editar Perfil</a>
 @endsection
 
 @section('content')
