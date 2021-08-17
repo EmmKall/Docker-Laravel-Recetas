@@ -2,9 +2,13 @@
 @extends('layouts.app')
 
 @section('botones')
-    <a href="{{ route('recetas.create') }}" class="btn btn-primary">Crear Receta  <i class="far fa-plus-square"></i></a>
-    <a href="{{ route('perfiles.show', ['perfil' => auth()->user()->id ]) }}" class="btn btn-outline-info mx-3"><i class="far fa-user"></i>Ver Perfil</a>
-    <a href="{{ route('perfiles.edit', ['perfil' => auth()->user()->id ]) }}" class="btn btn-outline-secondary"><i class="far fa-edit"></i> Editar Perfil</a>
+    @if( Auth::user() )
+        <a href="{{ route('recetas.create') }}" class="btn btn-primary text-uppercase">Crear Receta  <i class="far fa-plus-square"></i></a>
+    @endif
+    <a href="{{ route('perfiles.show', ['perfil' => auth()->user()->id ]) }}" class="btn btn-outline-info mx-3 text-uppercase"><i class="far fa-user"></i>Ver Perfil</a>
+    @if( auth()->user()->id )
+        <a href="{{ route('perfiles.edit', ['perfil' => auth()->user()->id ]) }}" class="btn btn-outline-secondary text-uppercase"><i class="far fa-edit"></i> Editar Perfil</a>
+    @endif
 @endsection
 
 @section('content')
@@ -47,6 +51,11 @@
                 </tr>
             </tfoot>
         </table>
+
+        <div class="col-12 my-3 d-flex justify-content-center align-items-center">
+            {{ $recetas->links() }}
+        </div>
+
     </div>
 
 </div>

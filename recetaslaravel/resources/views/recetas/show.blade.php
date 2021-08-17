@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('botones')
-    <a href="{{ route('recetas.index') }}" class="btn btn-outline-primary"><i class="fas fa-chevron-circle-left"></i> Volver</a>
-    <a href="{{ route('recetas.edit', ['receta' => $receta->id]) }}" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Editar</a>
+
+    @if( Auth::user() )
+        <a href="{{ route('recetas.index') }}" class="btn btn-outline-primary"><i class="fas fa-chevron-circle-left"></i> Volver</a>
+        <a href="{{ route('recetas.edit', ['receta' => $receta->id]) }}" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Editar</a>
+    @else
+        <a href="#" class="btn btn-outline-primary">Recetas <i class="fas fa-book-open"></i></a>
+    @endif
 @endsection
 
 @section('content')

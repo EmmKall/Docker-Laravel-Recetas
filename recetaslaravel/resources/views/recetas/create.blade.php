@@ -5,7 +5,7 @@
 @endsection
 
 @section('botones')
-    <a href="{{ route('recetas.index') }}" class="btn btn-primary"><i class="fas fa-caret-left"></i> Regresar</a>
+    <a href="{{ route('recetas.index') }}" class="btn btn-primary text-uppercase"><i class="fas fa-caret-left"></i> Regresar</a>
 @endsection
 
 @section('content')
@@ -75,7 +75,7 @@
             </div>
 
             <div class="col-md-12 form-group d-flex justify-content-center">
-                <input type="submit" value="Enviar" class="btn btn-success">
+                <input type="submit" value="Crear +" class="btn btn-success">
             </div>
 
         </form>

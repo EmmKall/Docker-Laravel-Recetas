@@ -5,7 +5,7 @@
 @endsection
 
 @section('botones')
-    <a href="{{ route('perfiles.show', ['perfil' => $perfil->id]) }}" class="btn btn-primary"><i class="fas fa-caret-left"></i> Regresar</a>
+    <a href="{{ route('perfiles.show', ['perfil' => $perfil->id]) }}" class="btn btn-primary text-uppercase"><i class="fas fa-caret-left"></i> Regresar</a>
 @endsection
 
 @section('content')
