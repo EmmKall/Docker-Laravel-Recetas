@@ -40,6 +40,11 @@
             </div>
 
         </div>
+
+        <div class="container my-2 d-flex align-items-center justify-content-center">
+            <like-button receta-id="{{ $receta->id }}" like="{{ $like }}" likes="{{ $likes }}"></like-button>
+        </div>
+
     </div>
 
 @endsection

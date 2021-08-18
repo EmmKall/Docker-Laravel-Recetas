@@ -55,10 +55,29 @@
         <div class="col-12 my-3 d-flex justify-content-center align-items-center">
             {{ $recetas->links() }}
         </div>
-
     </div>
-
 </div>
+
+<h2 class="h1 text-center my-3">Recetas que te gustan</h2>
+    <div class="container row m-auto bg-info border border-primary rounded rounded-3">
+        <div class="col-12 my-2 bg-light border border-3 border-primary p-3">
+            @if( count($meGusta) > 0 )
+                <ul class="list-group">
+                    @foreach($meGusta as $receta)
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <p>{{ $receta->titulo }}</p>
+                            <a class="btn btn-outline-primary text-uppercase" href="{{ route('recetas.show', ['receta' => $receta->id]) }}"><i class="fas fa-eye"></i> Ver</a>
+                        </li>
+                    @endforeach
+                </ul>
+            @else
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <h3 class="h3">Aun no tienes recetas guardadas</h3>
+                    <small>Dale me gusta a las recetas, para guardarlas</small>
+                </div>
+            @endif
+        </div>
+    </div>
 
 
 @endsection

@@ -26,6 +26,7 @@ Vue.use(VueSweetAlert2);
 Vue.config.ignoredElements = ['trix-editor'];
 Vue.component('fecha-receta', require('./components/FechaMoment.vue').default);
 Vue.component('eliminar-receta', require('./components/EliminarReceta.vue').default);
+Vue.component('like-button', require('./components/LikeButton.vue').default);
 
 //Probar SweetAlert2 correctamente incluido e instalado
 /* console.log(Vue.prototype); */
@@ -42,3 +43,8 @@ const app = new Vue({
 
 //Moment
 window.moment = require('moment');
+
+//Like recipe
+$('.like-btn').on('click', function() {
+$(this).toggleClass('like-active');
+});

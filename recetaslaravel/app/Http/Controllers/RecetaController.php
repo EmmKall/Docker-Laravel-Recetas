@@ -25,11 +25,12 @@ class RecetaController extends Controller
     {
         /* $recetas = Receta::all(); */
 
-
-        /* $recetas = Auth::user()->recetas; */
+        /* $recetas = Auth::user()->recetas; */ //Sin modelo
         $recetas = Receta::where('user_id', auth()->user()->id)->paginate(5);
 
-        return view ('recetas.index')->with('recetas', $recetas);
+        $meGusta = auth()->user()->meGusta;
+
+        return view ('recetas.index')->with('recetas', $recetas)->with('meGusta', $meGusta);
     }
 
     /**
@@ -96,7 +97,11 @@ class RecetaController extends Controller
      */
     public function show(Receta $receta)
     {
-        return view('recetas.show')->with('receta', $receta);
+        //Get if the user likes the recipe and authenticated
+        $like = ( auth()->user() ) ? auth()->user()->meGusta->contains( $receta->id ): false;
+        $likes = $receta->likes->count();
+
+        return view('recetas.show')->with('receta', $receta)->with('like', $like)->with('likes', $likes);
     }
 
     /**
