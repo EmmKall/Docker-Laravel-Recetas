@@ -14,7 +14,7 @@ use App\Http\Controllers\RecetaController;
 |
 */
 
-Route::get('/', function () { return view('welcome'); });
+Route::get( '/', 'InicioController@index' )->name('inicio.index');
 
 Route::get('/recetas', 'RecetaController@index')->name('recetas.index');
 Route::get('/recetas/create', 'RecetaController@create')->name('recetas.create');
