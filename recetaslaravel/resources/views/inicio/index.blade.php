@@ -4,11 +4,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
+@section('hero')
+    <div class="container hero-categorias">
+        <form class="h-100" action="{{ route('receta.search') }}">
+            <div class="row h-100 d-flex justify-content-center align-items-center">
+                <p class="display-4  text-white">Encuentra una receta en especifico</p>
+                <div class="form-group texto-buscar col-12 col-md-8">
+                    <input class="form-control" type="search" placeholder="Buscar receta" name="buscar" id="buscar">
+                </div>
+            </div>
+        </form>
+    </div>
+@endsection
+
 @section('botones')
 
 @endsection
 
 @section('content')
+
+    {{-- <img src="{{ url('/images/bgimagen.jpg') }}" alt="Imagen"> --}}
+    {{-- <img src="{{ asset('/images/bgimagen.jpg') }}" alt="Imagen"> --}}
+
     <h2 class="titulo-categoria text-uppercase my-3 ml-5 text-center">Últimas Recetas</h2>
     <div class="container">
         <div class="owl-carousel owl-theme p-3 my-2 d-flex justify-content-between align-items-center broder border-5 border-primary rounded rounded-3 bg-info">
