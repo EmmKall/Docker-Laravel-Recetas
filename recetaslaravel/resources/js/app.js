@@ -5,6 +5,7 @@
  */
 
 import VueSweetAlert2 from 'vue-sweetalert2';
+import 'owl.carousel';
 
 require('./bootstrap');
 
@@ -47,4 +48,29 @@ window.moment = require('moment');
 //Like recipe
 $('.like-btn').on('click', function() {
 $(this).toggleClass('like-active');
+});
+
+//Carousel con owl
+jQuery(document).ready(function() {
+    jQuery('.owl-carousel').owlCarousel({
+        margin: 5,
+        loop: true,
+        autoplay: true,
+        autpoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            500: {
+                items: 2
+            },
+            700: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+
+    })
 });

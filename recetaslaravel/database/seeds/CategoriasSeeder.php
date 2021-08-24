@@ -73,7 +73,7 @@ class CategoriasSeeder extends Seeder
         ]);
 
         DB::table('categoria_recetas')->insert([
-            'nombre' => 'Cortes de Desayunos',
+            'nombre' => 'Desayunos',
             'created_at' => date('Y--m-d H:i:s'),
             'updated_at' => date('Y--m-d H:i:s'),
         ]);
